@@ -14,7 +14,7 @@ public class Data{
     @JsonProperty("firestations")
     private List<Firestation> firestations;
 
-    @JsonProperty("medicalRecords")
+    @JsonProperty("medicalrecords")
     private List<MedicalRecord> medicalRecords;
 
     public List<MedicalRecord> getMedicalRecords() {
@@ -23,6 +23,17 @@ public class Data{
 
     public List<Person> getPersons() {
         return persons;
+    }
+
+    public List<Firestation> getFirestations() {
+        return firestations;
+    }
+
+    public List<Firestation> getFireStationsByAddress(String toto) {
+        return firestations.stream().filter((firestation) -> {
+            String firestationAddress = firestation.getAddress();
+            return firestationAddress.equals(toto);
+        }).toList();
     }
 }
 

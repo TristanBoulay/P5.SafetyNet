@@ -12,8 +12,13 @@ import java.util.Optional;
 @Service
 public class MedicalRecordService {
 
-        @Autowired
+
         private MedicalRecordRepository medicalRecordRepository;
+
+        @Autowired
+        public MedicalRecordService(MedicalRecordRepository medicalRecordRepository) {
+            this.medicalRecordRepository = medicalRecordRepository;
+        }
 
         public Optional<MedicalRecord> getMedicalRecord(final Long id) {
             return medicalRecordRepository.findById(id);
@@ -32,4 +37,28 @@ public class MedicalRecordService {
             return  medicalRecordRepository.save(medicalRecord);
         }
 
-}
+        public MedicalRecord updateMedicalRecord(long id, MedicalRecord medicalRecordNewData) {
+            Optional<MedicalRecord> optionalMedicalRecord = medicalRecordRepository.findById(id);
+        if (optionalMedicalRecord.isPresent()){
+            MedicalRecord foundMedRec = optionalMedicalRecord.get();
+
+            if (!foundMedRec.getFirstName().equals(medicalRecordNewData.getFirstName()) ||
+                    !foundMedRec.getLastName().equals(medicalRecordNewData.getLastName())) {
+                throw new IllegalArgumentException("lol tu veux changer ton nom ?tu peux pas");
+
+            }
+
+                foundMedRec.setId(medicalRecordNewData.getId());
+                foundMedRec.setMedications(medicalRecordNewData.getMedications());
+                foundMedRec.setAllergies(medicalRecordNewData.getAllergies());
+                foundMedRec.setBirthdate(medicalRecordNewData.getBirthdate());
+
+                return medicalRecordRepository.save(foundMedRec);
+            }
+            else {
+            throw new IllegalArgumentException("Medical record with id " + id + " not found");
+        }
+        }
+    }
+
+

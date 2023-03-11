@@ -12,11 +12,11 @@
 
     <mvc:annotation-driven />
     <context:component-scan base-package="com.P5.SafetyNet.Controllers"/>
-    <context:component-scan base-package="com.P5.SafetyNet.ControllersTest"/>
+    <context:component-scan base-package="com.P5.SafetyNet.Controllers"/>
     <resources mapping="/resources/**" location="/resources/" />
 
     <bean id="person" class="com.P5.SafetyNet.Controllers.PersonController" />
-    <bean id="firestation" class="com.P5.SafetyNet.Controllers.FirestationController" />
+    <bean id="firestation" class="com.P5.SafetyNet.Controllers.FirestationControllerControllerTest" />
     <bean id="medicalRecord" class="com.P5.SafetyNet.Controllers.MedicalRecordController" />
 
     <bean id="personService" class="com.P5.SafetyNet.Services.PersonService" />

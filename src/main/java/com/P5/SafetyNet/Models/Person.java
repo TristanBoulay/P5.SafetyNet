@@ -1,11 +1,23 @@
 package com.P5.SafetyNet.Models;
 
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.util.HashSet;
+import java.util.Set;
+
+@Getter
+@Setter
 @Entity
 @Table(name = "persons")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Person {
 
     @Id
@@ -32,4 +44,36 @@ public class Person {
     @Column(name="email")
     private String email;
 
+     /*utiliser les annotations JPA pour établir une relation One-to-One entre les entités Person et MedicalRecord :
+     @JoinColumn spécifie le nom de la colonne de la table Person -->foreign key pour référencer
+     l'entité MedicalRecord, identifiée par id.
+      */
+     @OneToOne()
+     @JsonBackReference
+     @JoinColumn(name = "medical_record_id")
+     private MedicalRecord medicalRecord;
+
+     @ManyToMany
+     @JoinTable(name = "firestations_persons", joinColumns = @JoinColumn(name = "person_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "firestation_id", referencedColumnName = "id"))
+     private Set<Firestation> fireStations = new HashSet<Firestation>();
+
+    public int getAge() {
+        String birthdateStr = medicalRecord.getBirthdate();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+        LocalDate birthdate = LocalDate.parse(birthdateStr, formatter);
+        LocalDate now = LocalDate.now();
+        return Period.between(birthdate, now).getYears();
+    }
+
+    public void addFireStation(Firestation firestation) {
+        fireStations.add(firestation);
+    }
 }
+
+
+
+
+
+
+
+
