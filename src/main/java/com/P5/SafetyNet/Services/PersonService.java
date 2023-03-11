@@ -2,13 +2,17 @@ package com.P5.SafetyNet.Services;
 
 
 import com.P5.SafetyNet.Dtos.ChildAlertDTO;
+import com.P5.SafetyNet.Dtos.EmailCommunityDTO;
+import com.P5.SafetyNet.Dtos.PersonByAddressDTO;
 import com.P5.SafetyNet.InterfaceRepository.PersonRepository;
+import com.P5.SafetyNet.Models.Firestation;
 import com.P5.SafetyNet.Models.Person;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
@@ -81,4 +85,20 @@ public class PersonService {
     }
 
 
+    public EmailCommunityDTO getEmailByCity(String city) {
+        List<Person> personInCity = personRepository.findByCity(city);
+        List<String> listOfEmails = personInCity.stream().map(person -> person.getEmail()).toList();
+
+        return new EmailCommunityDTO(city, listOfEmails);
+    }
+    public PersonByAddressDTO returnListByAddress (String address) {
+        List<String> stationNumbers = new LinkedList<>();
+        List<Person> personsByAddress = personRepository.findByAddress(address);
+        for(Person person : personsByAddress){
+            stationNumbers =  person.getFireStations().stream().map(fs-> fs.getStation()).toList();
+
+        }
+        return new PersonByAddressDTO(stationNumbers, personsByAddress);
+
+    }
 }

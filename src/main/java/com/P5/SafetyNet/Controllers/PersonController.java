@@ -2,6 +2,8 @@ package com.P5.SafetyNet.Controllers;
 
 
 import com.P5.SafetyNet.Dtos.ChildAlertDTO;
+import com.P5.SafetyNet.Dtos.EmailCommunityDTO;
+import com.P5.SafetyNet.Dtos.PersonByAddressDTO;
 import com.P5.SafetyNet.Models.Person;
 import com.P5.SafetyNet.Services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,8 +70,6 @@ public class PersonController {
     @GetMapping("/childAlert")
     public ResponseEntity<List<ChildAlertDTO>> getChildAlert(@RequestParam("address") String address) {
         List<ChildAlertDTO> childListByAddress = personService.getChildByAddress(address);
-
-        System.out.println(childListByAddress);
         if (childListByAddress.isEmpty()) {
             return ResponseEntity.ok().body(Collections.EMPTY_LIST);
         } else {
@@ -77,11 +77,26 @@ public class PersonController {
         }
     }
 
+    @GetMapping("/communityEmail")
+    public ResponseEntity<EmailCommunityDTO> getEmailByCity (@RequestParam("city") String city){
+        EmailCommunityDTO listOfEmails = personService.getEmailByCity(city);
+
+        return new ResponseEntity(listOfEmails, HttpStatus.OK);
+    }
+
+    @GetMapping("/fire")
+    public ResponseEntity<PersonByAddressDTO> getPersonsByAddress(@RequestParam("address") String address){
+        PersonByAddressDTO listOfPersonsByAddress= personService.returnListByAddress(address);
+        return new ResponseEntity(listOfPersonsByAddress, HttpStatus.OK);
+
+    }
 
     /*quand on request le param "address", retourne la liste de type ChildAlertDTO.
     la classe Data Acces Object doit comprendre
     le prénom et le nom de famille de chaque enfant, son âge et une liste des autres membres de la maison-->
-    voir classe ChildAlertDTO */
+    voir classe ChildAlertDTO
+
+    */
 
 }
 

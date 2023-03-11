@@ -1,6 +1,7 @@
 package com.P5.SafetyNet.Controllers;
 
 
+import com.P5.SafetyNet.Dtos.PersonByAddressDTO;
 import com.P5.SafetyNet.Dtos.PersonByStationDTO;
 import com.P5.SafetyNet.Dtos.ResponseDTO;
 import com.P5.SafetyNet.Models.Firestation;
@@ -61,4 +62,6 @@ public class FirestationController {
 
         return new ResponseEntity(personByStation, HttpStatus.OK);
     }
+//va retourner un DTO avec comme parametres un string et une liste de Person
+
 }

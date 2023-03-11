@@ -12,5 +12,7 @@ import java.util.List;
 public interface PersonRepository extends JpaRepository<Person, Long> {
     List<Person> findByAddress(String address);
 
+    List<Person> findByCity(String city);
+
 
 }
