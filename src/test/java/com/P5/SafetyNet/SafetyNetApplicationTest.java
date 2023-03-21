@@ -1,4 +1,4 @@
-package com.P5.SafetyNet.SafetyNetApplication;
+package com.P5.SafetyNet;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.SpringBootConfiguration;

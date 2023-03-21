@@ -1,11 +1,11 @@
 package com.P5.SafetyNet.Services;
 
 
-import com.P5.SafetyNet.Dtos.ChildAlertDTO;
-import com.P5.SafetyNet.Dtos.EmailCommunityDTO;
-import com.P5.SafetyNet.Dtos.PersonByAddressDTO;
+import com.P5.SafetyNet.Dtos.*;
+import com.P5.SafetyNet.InterfaceRepository.FirestationRepository;
 import com.P5.SafetyNet.InterfaceRepository.PersonRepository;
 import com.P5.SafetyNet.Models.Firestation;
+import com.P5.SafetyNet.Models.MedicalRecord;
 import com.P5.SafetyNet.Models.Person;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +23,12 @@ public class PersonService {
     private PersonRepository personRepository;
     private String address;
 
+
+
     @Autowired
     public PersonService(PersonRepository personRepository) {
         this.personRepository = personRepository;
+
     }
 
     public Optional<Person> getPerson(@PathVariable Long id) {
@@ -57,6 +60,8 @@ public class PersonService {
             personToUpdate.setZip(newPersonData.getZip());
             personToUpdate.setPhone(newPersonData.getPhone());
             personToUpdate.setEmail(newPersonData.getEmail());
+            personToUpdate.setAge(newPersonData.getAge());
+            personToUpdate.setMedicalRecord(newPersonData.getMedicalRecord());
             return personRepository.save(personToUpdate);
         } else {
             throw new IllegalArgumentException("Person with id " + id + " not found");
@@ -95,10 +100,31 @@ public class PersonService {
         List<String> stationNumbers = new LinkedList<>();
         List<Person> personsByAddress = personRepository.findByAddress(address);
         for(Person person : personsByAddress){
-            stationNumbers =  person.getFireStations().stream().map(fs-> fs.getStation()).toList();
+            stationNumbers =  person.getFireStations().stream().map(fs-> fs.getStation().toString()).toList();
 
         }
         return new PersonByAddressDTO(stationNumbers, personsByAddress);
 
     }
+
+
+     public TelephoneByAddressDTO getPhoneByStation(Firestation firestation){
+         List<String> listOfPhone = new LinkedList<>();
+         List<Person> pBySation = personRepository.findByFireStations( firestation);
+        for(Person person : pBySation ) {
+            String  getPhone = person.getPhone();
+            listOfPhone.add(getPhone);
+        }
+
+       return new TelephoneByAddressDTO(firestation.getStation().toString(),listOfPhone);
+     }
+
+     public PersonByNameDTO getPersonByFirstNameAndLastName(String firstName, String lastName){
+        Person person = personRepository.findByFirstNameAndLastName(firstName, lastName);
+         MedicalRecord medRecOfPerson = person.getMedicalRecord();
+         MedRecDTO medicalRecord = new MedRecDTO (medRecOfPerson.getMedications(),medRecOfPerson.getAllergies());
+
+        return new PersonByNameDTO(person.getFirstName(),person.getLastName(),person.getAddress(),person.getAge(),person.getEmail(),medicalRecord);
+     }
+
 }

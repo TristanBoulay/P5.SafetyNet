@@ -25,7 +25,7 @@ public class Firestation {
     private String address;
 
     @Column(name="station")
-    private String station;
+    private Long station;
 
     @ManyToMany (mappedBy = "fireStations")
     private Set<Person> assignedPersons = new HashSet<Person>();

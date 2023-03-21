@@ -1,9 +1,8 @@
 package com.P5.SafetyNet.Controllers;
 
 
-import com.P5.SafetyNet.Dtos.ChildAlertDTO;
-import com.P5.SafetyNet.Dtos.EmailCommunityDTO;
-import com.P5.SafetyNet.Dtos.PersonByAddressDTO;
+import com.P5.SafetyNet.Dtos.*;
+import com.P5.SafetyNet.Models.Firestation;
 import com.P5.SafetyNet.Models.Person;
 import com.P5.SafetyNet.Services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,6 +89,20 @@ public class PersonController {
         return new ResponseEntity(listOfPersonsByAddress, HttpStatus.OK);
 
     }
+    @GetMapping("/phoneAlert")
+    public ResponseEntity<TelephoneByAddressDTO> getPhoneByAddress(@RequestParam("firestation") Firestation firestation){
+        TelephoneByAddressDTO listOfPhonesDTO = personService.getPhoneByStation(firestation);
+        return new ResponseEntity(listOfPhonesDTO,HttpStatus.OK);
+    }
+
+    @GetMapping("/personInfo")
+    public ResponseEntity<PersonByNameDTO> getPersonByFirstNameAndLastName( @RequestParam("firstName")String firstName,@RequestParam("lastName")String lastName) {
+        PersonByNameDTO pByFirstNameAndLastName = personService.getPersonByFirstNameAndLastName(firstName, lastName);
+        return new ResponseEntity(pByFirstNameAndLastName, HttpStatus.OK);
+
+    }
+
+
 
     /*quand on request le param "address", retourne la liste de type ChildAlertDTO.
     la classe Data Acces Object doit comprendre

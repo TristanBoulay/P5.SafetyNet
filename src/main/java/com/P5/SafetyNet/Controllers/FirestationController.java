@@ -1,6 +1,7 @@
 package com.P5.SafetyNet.Controllers;
 
 
+import com.P5.SafetyNet.Dtos.HouseHoldDTO;
 import com.P5.SafetyNet.Dtos.PersonByAddressDTO;
 import com.P5.SafetyNet.Dtos.PersonByStationDTO;
 import com.P5.SafetyNet.Dtos.ResponseDTO;
@@ -14,8 +15,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 @RestController
 public class FirestationController {
@@ -57,10 +57,31 @@ public class FirestationController {
     }
 
     @GetMapping("/firestation")
-    public ResponseEntity<List<PersonByStationDTO>> getPersonsByStation(@RequestParam("stationNumber") String stationNumber){
+    public ResponseEntity<List<PersonByStationDTO>> getPersonsByStation(@RequestParam("stationNumber") Long stationNumber){
         ResponseDTO personByStation = firestationService.returnListByFireStation(stationNumber);
 
         return new ResponseEntity(personByStation, HttpStatus.OK);
+    }
+
+    @GetMapping("/flood/stations")
+    public ResponseEntity<HashMap<Long, List<HouseHoldDTO>>> getHouseHoldsByStation(@RequestParam("stations")List<Long>stations){
+        System.out.println(stations);
+        try {
+            HashMap<Long, List<HouseHoldDTO>> houseHoldDTOList = firestationService.getHouseHoldsByStation(stations);
+        if (houseHoldDTOList.isEmpty()) {
+            System.out.println("etape1");
+            return ResponseEntity.noContent().build();
+        } else {
+            System.out.println("etape2");
+            return ResponseEntity.ok(houseHoldDTOList);
+        }
+       }
+       catch (Exception e) {
+            e.printStackTrace();
+           System.out.println(e.toString());
+            return null;
+        }
+
     }
 //va retourner un DTO avec comme parametres un string et une liste de Person
 

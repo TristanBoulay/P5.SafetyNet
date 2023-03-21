@@ -1,21 +1,15 @@
 package com.P5.SafetyNet.Services;
 
-import com.P5.SafetyNet.Dtos.PersonByAddressDTO;
-import com.P5.SafetyNet.Dtos.PersonByStationDTO;
-import com.P5.SafetyNet.Dtos.ResponseDTO;
+import com.P5.SafetyNet.Dtos.*;
 import com.P5.SafetyNet.InterfaceRepository.FirestationRepository;
-import com.P5.SafetyNet.InterfaceRepository.PersonRepository;
 import com.P5.SafetyNet.Models.Firestation;
+import com.P5.SafetyNet.Models.MedicalRecord;
 import com.P5.SafetyNet.Models.Person;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @Data
 @Service
@@ -23,13 +17,12 @@ public class FirestationService {
 
 
     private FirestationRepository firestationRepository;
-    private final PersonRepository personRepository;
+
 
     @Autowired
-    public FirestationService( FirestationRepository firestationRepository,
-                               PersonRepository personRepository){
+    public FirestationService( FirestationRepository firestationRepository){
         this.firestationRepository = firestationRepository;
-        this.personRepository = personRepository;
+
     }
 
     public Optional<Firestation> getFirestation(final Long id) {
@@ -61,11 +54,11 @@ public class FirestationService {
         }
     }
 
-    public List<Firestation> findByStation(String stationId){
-        return firestationRepository.findByStation(stationId);
+    public List<Firestation> findByStation(Long station){
+        return firestationRepository.findByStation(station);
     }
 
-    public ResponseDTO returnListByFireStation(String stationId) {
+    public ResponseDTO returnListByFireStation(Long stationId) {
         List<Firestation> firestationsInStation = findByStation(stationId);
         List<Person> personsInStation= new LinkedList<>();
 
@@ -87,6 +80,38 @@ public class FirestationService {
 
 
     }
+    public HashMap<Long, List<HouseHoldDTO>>
+    getHouseHoldsByStation(List<Long> stations){
+        HashMap<Long, List<HouseHoldDTO>> stationList = new HashMap<Long, List<HouseHoldDTO>>();
+        List<PersonByStationDTOVar> personByStationDTOList;
+
+        for(Long station : stations) {
+            List<Firestation> firestationsfromStation = findByStation(station);
+            List<HouseHoldDTO> houseHoldDTOList = new LinkedList<>();
+
+            for (Firestation firestation : firestationsfromStation) {
+                String address = firestation.getAddress();
+                Set<Person> getPersonsFromFirestations = firestation.getAssignedPersons();
+
+                 personByStationDTOList = getPersonsFromFirestations.stream().map((person) -> {
+                     MedicalRecord medicalRecord = person.getMedicalRecord();
+                     List<String> allergies = medicalRecord.getAllergies().isEmpty() ? new ArrayList<>() : medicalRecord.getAllergies();
+                     List<String> medications = medicalRecord.getMedications().isEmpty() ? new ArrayList<>() : medicalRecord.getMedications();
+
+                     return new PersonByStationDTOVar(person.getFirstName(), person.getLastName(), person.getPhone(), person.getAge(), allergies, medications);
+                 }).toList();
 
 
+                houseHoldDTOList.add(new HouseHoldDTO(address, personByStationDTOList));
+            }
+
+            stationList.put( station, houseHoldDTOList);
+
+        }
+
+
+        return stationList;
+    }
 }
+
+
