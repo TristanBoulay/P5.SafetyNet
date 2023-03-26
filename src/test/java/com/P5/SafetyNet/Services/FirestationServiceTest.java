@@ -33,7 +33,7 @@ public class FirestationServiceTest {
         this.firestation = new Firestation();
         this.firestation.setId(1L);
         this.firestation.setAddress("Bali");
-        this.firestation.setStation("9");
+        this.firestation.setStation(9L);
 
         this.firestations = new LinkedList<>();
         this.firestations.add(firestation);
@@ -85,7 +85,7 @@ public class FirestationServiceTest {
         Firestation updatedFirestation = new Firestation();
         updatedFirestation.setId(1L);
         updatedFirestation.setAddress("1945");
-        updatedFirestation.setStation("7");
+        updatedFirestation.setStation(7L);
 
 
 

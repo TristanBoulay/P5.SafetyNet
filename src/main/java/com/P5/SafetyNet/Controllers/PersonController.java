@@ -23,7 +23,7 @@ public class PersonController {
     private PersonService personService;
 
     @GetMapping("/persons")
-    public Iterable<com.P5.SafetyNet.Models.Person> getPersons() {
+    public List<com.P5.SafetyNet.Models.Person> getPersons() {
         System.out.println(personService.getPersons());
         return personService.getPersons();
     }

@@ -31,19 +31,19 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @AutoConfigureMockMvc
 public class FirestationControllerControllerTest {
     @Autowired
-   private  MockMvc mockMvc;
+    private MockMvc mockMvc;
 
     @MockBean
     private FirestationService firestationService;
 
     private Firestation firestation;
-    private List <Firestation> firestations;
+    private List<Firestation> firestations;
 
     @BeforeEach
     public void prepareData() throws Exception {
         this.firestation = new Firestation();
         this.firestation.setId((long) 1L);
-        this.firestation.setStation("do Joao");
+        this.firestation.setStation(4L);
         this.firestation.setAddress("caparicou");
         this.firestations = new LinkedList<Firestation>();
         this.firestations.add(this.firestation);
@@ -51,10 +51,10 @@ public class FirestationControllerControllerTest {
     }
 
     @Test
-    public void getFirestations() throws  Exception {
+    public void getFirestations() throws Exception {
         when(firestationService.getFirestations()).thenReturn(this.firestations);
         this.mockMvc.perform(get("/firestations").contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
-                verify(firestationService, times(1)).getFirestations();
+        verify(firestationService, times(1)).getFirestations();
 
     }
 
@@ -77,15 +77,16 @@ public class FirestationControllerControllerTest {
         this.mockMvc.perform(get("/firestations/1"))
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.address").value("caparicou"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.station").value("do Joao"));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.station").value(4L));
         verify(firestationService, times(1)).getFirestation(1L);
     }
 
-    @Test void testUpdateFirestation() throws Exception {
+    @Test
+    void testUpdateFirestation() throws Exception {
         Firestation updatedFirestation = new Firestation();
         updatedFirestation.setId(1L);
         updatedFirestation.setAddress("ericeira");
-        updatedFirestation.setStation("6");
+        updatedFirestation.setStation(5L);
 
 
         when(firestationService.getFirestation(1L)).thenReturn(Optional.of(this.firestation));
@@ -102,10 +103,10 @@ public class FirestationControllerControllerTest {
 
                 .andExpect(status().isCreated());
 
-        ArgumentCaptor<Firestation> argumentCaptor = ArgumentCaptor.forClass(Firestation.class) ;
+        ArgumentCaptor<Firestation> argumentCaptor = ArgumentCaptor.forClass(Firestation.class);
         verify(firestationService, times(1)).updateFirestation(eq(1l), argumentCaptor.capture());
         Firestation savedFirestation = argumentCaptor.getValue();
-        assertEquals("ericeira",savedFirestation.getAddress());
+        assertEquals("ericeira", savedFirestation.getAddress());
         assertEquals("6", savedFirestation.getStation());
 
     }

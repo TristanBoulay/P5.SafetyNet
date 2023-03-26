@@ -48,7 +48,28 @@ public class PersonServiceTest {
         medRec.setBirthdate("01/01/2000");
         medRec.setMedications(medications);
         medRec.setAllergies(allergies);
-        medRec.setPerson(this.person);
+
+        MedicalRecord medRec1 = new MedicalRecord();
+        medRec1.setFirstName("Bruno");
+        medRec1.setLastName("Padrao");
+        medRec1.setBirthdate("01/01/2000");
+        medRec1.setMedications(medications);
+        medRec1.setAllergies(allergies);
+
+        MedicalRecord medRec2 = new MedicalRecord();
+        medRec2.setFirstName("jannot");
+        medRec2.setLastName("mendes");
+        medRec2.setBirthdate("01/01/2018");
+        medRec2.setMedications(medications);
+        medRec2.setAllergies(allergies);
+
+        MedicalRecord medRec3 = new MedicalRecord();
+        medRec3.setFirstName("Alice");
+        medRec3.setLastName("keke");
+        medRec3.setBirthdate("01/01/2015");
+        medRec3.setMedications(medications);
+        medRec3.setAllergies(allergies);
+
 
         this.person = new Person();
         this.person.setId((long) 3L);
@@ -64,40 +85,41 @@ public class PersonServiceTest {
 
         Person parent = new Person();
         parent.setId(5L);
-        parent.setFirstName("Jean");
-        parent.setLastName("Paul");
+        parent.setFirstName("Bruno");
+        parent.setLastName("Padrao");
         parent.setAddress("mentawai");
         parent.setCity("Nantes");
         parent.setZip("345");
         parent.setPhone("0123");
         parent.setEmail("paul@uber.com");
-        parent.setMedicalRecord(medRec);
-        parent.setAge(30);
+        parent.setMedicalRecord(medRec1);
+        parent.getAge();
+
 
         Person child1 = new Person();
         child1.setId(6L);
-        child1.setFirstName("Jean");
-        child1.setLastName("Paul");
+        child1.setFirstName("jannot");
+        child1.setLastName("mendes");
         child1.setAddress("mentawai");
         child1.setCity("Nantes");
         child1.setZip("345");
         child1.setPhone("0123");
         child1.setEmail("child1@uber.com");
-        child1.setMedicalRecord(medRec);
-        child1.setAge(5);
+        child1.setMedicalRecord(medRec2);
+        child1.getAge();
 
 
         Person child2 = new Person();
         child2.setId(7L);
-        child2.setFirstName("Child2");
-        child2.setLastName("Paul");
+        child2.setFirstName("Alice");
+        child2.setLastName("keke");
         child2.setAddress("mexico");
         child2.setCity("Nantes");
         child2.setZip("345");
         child2.setPhone("0123");
         child2.setEmail("child2@uber.com");
-        child2.setMedicalRecord(medRec);
-        child2.setAge(8);
+        child2.setMedicalRecord(medRec3);
+        child2.getAge();
 
 
         this.persons = new LinkedList<>();
@@ -105,7 +127,6 @@ public class PersonServiceTest {
         persons.add(parent);
         persons.add(child1);
         persons.add(child2);
-        System.out.println(persons);
     }
 
     @Test
@@ -127,112 +148,104 @@ public class PersonServiceTest {
     @Test
     public void testGetPersons() {
         when(personRepository.findAll()).thenReturn(this.persons);
-        Iterable<Person> persons = personService.getPersons();
-        Iterator<Person> iterator = persons.iterator();
-        while (iterator.hasNext()) {
-            Person person = iterator.next();
-            assertEquals(((List<Person>) persons).size(), 1);
-            assertEquals(person.getId(), this.person.getId());
-            assertEquals(person.getFirstName(), this.person.getFirstName());
-            assertEquals(person.getLastName(), this.person.getLastName());
-            assertEquals(person.getAddress(), this.person.getAddress());
-            assertEquals(person.getPhone(), this.person.getPhone());
-            assertEquals(person.getZip(), this.person.getZip());
-            assertEquals(person.getEmail(), this.person.getEmail());
-            assertEquals(person.getCity(), this.person.getCity());
-            verify(personRepository, times(1)).findAll();
-        }
+        List<Person> persons = personService.getPersons();
+
+        assertEquals(4, persons.size());
+
+        Person firstPerson = persons.get(0);
+
+        assertEquals(3, firstPerson.getId());
+        assertEquals("Jean", firstPerson.getFirstName());
+        assertEquals("Paul", firstPerson.getLastName());
     }
 
-        @Test
-        public void testGetPerson () {
-            when(personRepository.findById(3L)).thenReturn(Optional.of(this.person));
-            Optional<Person> optionalPerson = personService.getPerson(3L);
-            assertEquals(optionalPerson.isPresent(), true);
-            Person person = optionalPerson.get();
-            assertEquals(person.getId(), this.person.getId());
-            assertEquals(person.getFirstName(), this.person.getFirstName());
-            assertEquals(person.getLastName(), this.person.getLastName());
-            assertEquals(person.getAddress(), this.person.getAddress());
-            assertEquals(person.getPhone(), this.person.getPhone());
-            assertEquals(person.getZip(), this.person.getZip());
-            assertEquals(person.getEmail(), this.person.getEmail());
-            assertEquals(person.getCity(), this.person.getCity());
-            verify(personRepository, times(1)).findById(3L);
+    @Test
+    public void testGetPerson () {
+        when(personRepository.findById(3L)).thenReturn(Optional.of(this.person));
+        Optional<Person> optionalPerson = personService.getPerson(3L);
+        assertEquals(optionalPerson.isPresent(), true);
+        Person person = optionalPerson.get();
+        assertEquals(person.getId(), this.person.getId());
+        assertEquals(person.getFirstName(), this.person.getFirstName());
+        assertEquals(person.getLastName(), this.person.getLastName());
+        assertEquals(person.getAddress(), this.person.getAddress());
+        assertEquals(person.getPhone(), this.person.getPhone());
+        assertEquals(person.getZip(), this.person.getZip());
+        assertEquals(person.getEmail(), this.person.getEmail());
+        assertEquals(person.getCity(), this.person.getCity());
+        verify(personRepository, times(1)).findById(3L);
+    }
+
+    @Test
+    public void testUpdatePerson () {
+        List<String> newMedications = new ArrayList<>();
+        newMedications.add("v");
+        newMedications.add("p");
+        newMedications.add("a");
+        List<String> newAllergies = new ArrayList<>();
+        newAllergies.add("poil de chatte");
+        newAllergies.add("pollenus");
+
+        MedicalRecord newMedRec = new MedicalRecord();
+        newMedRec.setFirstName("Jean");
+        newMedRec.setLastName("Paul");
+        newMedRec.setBirthdate("01/01/2000");
+        newMedRec.setMedications(newMedications);
+        newMedRec.setAllergies(newAllergies);
+        newMedRec.setPerson(this.person);
+
+        Person updatedPerson = new Person();
+        updatedPerson.setFirstName("Jean");
+        updatedPerson.setLastName("Paul");
+        updatedPerson.setAddress("Paris");
+        updatedPerson.setPhone("4567");
+        updatedPerson.setZip("75001");
+        updatedPerson.setEmail("dupont@gmail.com");
+        updatedPerson.setCity("Paris");
+        updatedPerson.setMedicalRecord(newMedRec);
+        updatedPerson.getAge();
+
+        when(personRepository.findById(3L)).thenReturn(Optional.of(this.person));
+        when(personRepository.save(person)).thenReturn(updatedPerson);
+
+        Person result = personService.updatePerson( 3L, updatedPerson);
+
+        assertEquals("Paris", result.getAddress());
+        assertEquals("Paris", result.getCity());
+        assertEquals("75001", result.getZip());
+        assertEquals("4567", result.getPhone());
+        assertEquals("dupont@gmail.com", result.getEmail());
+        assertEquals(updatedPerson.getMedicalRecord(), newMedRec);
+        assertEquals(23, updatedPerson.getAge());
+        verify(personRepository, times(1)).findById(3L);
+        verify(personRepository, times(1)).save(person);
+    }
+
+    @Test
+    public void testGetPersonByAddress(){
+        List<Person> mentawailPeople = persons.stream().filter((person) -> person.getAddress() == "mentawai").toList();
+
+        when(personRepository.findByAddress(any())).thenReturn(mentawailPeople);
+        List<Person> result = personService.getPersonByAddress("mentawai");
+
+        for(Person p : result) {
+            assertEquals("mentawai", p.getAddress());
         }
-
-        @Test
-        public void testUpdatePerson () {
-
-            List<String> newMedications = new ArrayList<>();
-            newMedications.add("v");
-            newMedications.add("p");
-            newMedications.add("a");
-            List<String> newAllergies = new ArrayList<>();
-            newAllergies.add("poil de chatte");
-            newAllergies.add("pollenus");
-
-            MedicalRecord newMedRec = new MedicalRecord();
-            newMedRec.setFirstName("Jean");
-            newMedRec.setLastName("Paul");
-            newMedRec.setBirthdate("01/01/2000");
-            newMedRec.setMedications(newMedications);
-            newMedRec.setAllergies(newAllergies);
-            newMedRec.setPerson(this.person);
-
-            Person updatedPerson = new Person();
-            updatedPerson.setFirstName("Jean");
-            updatedPerson.setLastName("Paul");
-            updatedPerson.setAddress("Paris");
-            updatedPerson.setPhone("4567");
-            updatedPerson.setZip("75001");
-            updatedPerson.setEmail("dupont@gmail.com");
-            updatedPerson.setCity("Paris");
-            updatedPerson.setMedicalRecord(newMedRec);
-            updatedPerson.getAge();
-
-
-            when(personRepository.findById(3L)).thenReturn(Optional.of(this.person));
-            when(personRepository.save(person)).thenReturn(updatedPerson);
-
-            Person result = personService.updatePerson( 3L, updatedPerson);
-
-
-            assertEquals("Paris", result.getAddress());
-            assertEquals("Paris", result.getCity());
-            assertEquals("75001", result.getZip());
-            assertEquals("4567", result.getPhone());
-            assertEquals("dupont@gmail.com", result.getEmail());
-            assertEquals(updatedPerson.getMedicalRecord(), newMedRec);
-            assertEquals(23, updatedPerson.getAge());
-            verify(personRepository, times(1)).findById(3L);
-            verify(personRepository, times(1)).save(person);
-        }
-
-        @Test
-        public void testGetPersonByAddress(){
-            when(personRepository.findByAddress(any())).thenReturn(persons);
-            List<Person> result = personService.getPersonByAddress("mentawai");
-                    for(Person p : result) {
-                        assertEquals("mentawai", p.getAddress());
-
-                    }
-        }
+    }
 
     @Test
     public void testGetChildByAddress() {
         List<Person> persons = this.persons;
-        when(personRepository.findByAddress(person.getAddress())).thenReturn(persons);
-        List<Person> children = new ArrayList<>();
-             for(Person p : persons) {
-               ChildAlertDTO newChild =  new ChildAlertDTO();
-               newChild = personService.getChildByAddress(p.getAddress());
-                 children.add(newChild);
+        when(personRepository.findByAddress(any())).thenReturn(persons);
+        List<ChildAlertDTO> children = personService.getChildByAddress("mentawai");
 
         assertEquals(2, children.size());
-        assertTrue(children.contains(p.getAge()<= 18));
-             }
+
+        for (ChildAlertDTO child : children) {
+            assertTrue(child.getAge() <= 18);
+        }
     }
-    }
+}
+
 
 

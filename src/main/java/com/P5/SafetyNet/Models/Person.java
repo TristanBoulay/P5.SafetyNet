@@ -19,44 +19,44 @@ import java.util.Set;
 public class Person {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="firstName")
+    @Column(name = "firstName")
     private String firstName;
 
-    @Column(name="lastName")
+    @Column(name = "lastName")
     private String lastName;
 
-    @Column(name="address")
+    @Column(name = "address")
     private String address;
-    @Column(name="city")
+    @Column(name = "city")
     private String city;
 
-    @Column(name="zip")
+    @Column(name = "zip")
     private String zip;
 
-    @Column(name="phone")
+    @Column(name = "phone")
     private String phone;
 
-    @Column(name="email")
+    @Column(name = "email")
     private String email;
 
     @Column(name = "age")
     private int age;
 
-     /*utiliser les annotations JPA pour établir une relation One-to-One entre les entités Person et MedicalRecord :
-     @JoinColumn spécifie le nom de la colonne de la table Person -->foreign key pour référencer
-     l'entité MedicalRecord, identifiée par id.
-      */
-     @OneToOne()
-     @JsonBackReference
-     @JoinColumn(name = "medical_record_id")
-     private MedicalRecord medicalRecord;
+    /*utiliser les annotations JPA pour établir une relation One-to-One entre les entités Person et MedicalRecord :
+    @JoinColumn spécifie le nom de la colonne de la table Person -->foreign key pour référencer
+    l'entité MedicalRecord, identifiée par id.
+     */
+    @OneToOne()
+    @JsonBackReference
+    @JoinColumn(name = "medical_record_id")
+    private MedicalRecord medicalRecord;
 
-     @ManyToMany
-     @JoinTable(name = "firestations_persons", joinColumns = @JoinColumn(name = "person_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "firestation_id", referencedColumnName = "id"))
-     private Set<Firestation> fireStations = new HashSet<Firestation>();
+    @ManyToMany
+    @JoinTable(name = "firestations_persons", joinColumns = @JoinColumn(name = "person_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "firestation_id", referencedColumnName = "id"))
+    private Set<Firestation> fireStations = new HashSet<Firestation>();
 
     public int getAge() {
         String birthdateStr = medicalRecord.getBirthdate();
@@ -79,7 +79,7 @@ public class Person {
     }
 
     public void setAge(int age) {
-       this.age =getAge();
+        this.age = getAge();
     }
 
 }
