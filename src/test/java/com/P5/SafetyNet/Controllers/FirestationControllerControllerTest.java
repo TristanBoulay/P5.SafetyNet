@@ -2,7 +2,6 @@ package com.P5.SafetyNet.Controllers;
 
 
 import com.P5.SafetyNet.Models.Firestation;
-import com.P5.SafetyNet.Models.Person;
 import com.P5.SafetyNet.Services.FirestationService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
@@ -42,7 +41,7 @@ public class FirestationControllerControllerTest {
     @BeforeEach
     public void prepareData() throws Exception {
         this.firestation = new Firestation();
-        this.firestation.setId((long) 1L);
+        this.firestation.setId(1L);
         this.firestation.setStation(4L);
         this.firestation.setAddress("caparicou");
         this.firestations = new LinkedList<Firestation>();
@@ -86,7 +85,7 @@ public class FirestationControllerControllerTest {
         Firestation updatedFirestation = new Firestation();
         updatedFirestation.setId(1L);
         updatedFirestation.setAddress("ericeira");
-        updatedFirestation.setStation(5L);
+        updatedFirestation.setStation(4L);
 
 
         when(firestationService.getFirestation(1L)).thenReturn(Optional.of(this.firestation));
@@ -99,15 +98,15 @@ public class FirestationControllerControllerTest {
                 .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(1))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.address").value("ericeira"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.station").value("6"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.station").value(4))
 
                 .andExpect(status().isCreated());
 
         ArgumentCaptor<Firestation> argumentCaptor = ArgumentCaptor.forClass(Firestation.class);
-        verify(firestationService, times(1)).updateFirestation(eq(1l), argumentCaptor.capture());
+        verify(firestationService, times(1)).updateFirestation(eq(1L), argumentCaptor.capture());
         Firestation savedFirestation = argumentCaptor.getValue();
         assertEquals("ericeira", savedFirestation.getAddress());
-        assertEquals("6", savedFirestation.getStation());
+        assertEquals(4, savedFirestation.getStation());
 
     }
 

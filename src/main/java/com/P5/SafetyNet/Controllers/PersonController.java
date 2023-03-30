@@ -77,26 +77,27 @@ public class PersonController {
     }
 
     @GetMapping("/communityEmail")
-    public ResponseEntity<EmailCommunityDTO> getEmailByCity (@RequestParam("city") String city){
+    public ResponseEntity<EmailCommunityDTO> getEmailByCity(@RequestParam("city") String city) {
         EmailCommunityDTO listOfEmails = personService.getEmailByCity(city);
 
         return new ResponseEntity(listOfEmails, HttpStatus.OK);
     }
 
     @GetMapping("/fire")
-    public ResponseEntity<PersonByAddressDTO> getPersonsByAddress(@RequestParam("address") String address){
-        PersonByAddressDTO listOfPersonsByAddress= personService.returnListByAddress(address);
+    public ResponseEntity<PersonByAddressDTO> getPersonsByAddress(@RequestParam("address") String address) {
+        PersonByAddressDTO listOfPersonsByAddress = personService.returnListByAddress(address);
         return new ResponseEntity(listOfPersonsByAddress, HttpStatus.OK);
 
     }
+
     @GetMapping("/phoneAlert")
-    public ResponseEntity<TelephoneByAddressDTO> getPhoneByAddress(@RequestParam("firestation") Firestation firestation){
+    public ResponseEntity<TelephoneByAddressDTO> getPhoneByAddress(@RequestParam("firestation") Firestation firestation) {
         TelephoneByAddressDTO listOfPhonesDTO = personService.getPhoneByStation(firestation);
-        return new ResponseEntity(listOfPhonesDTO,HttpStatus.OK);
+        return new ResponseEntity(listOfPhonesDTO, HttpStatus.OK);
     }
 
     @GetMapping("/personInfo")
-    public ResponseEntity<PersonByNameDTO> getPersonByFirstNameAndLastName( @RequestParam("firstName")String firstName,@RequestParam("lastName")String lastName) {
+    public ResponseEntity<PersonByNameDTO> getPersonByFirstNameAndLastName(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName) {
         PersonByNameDTO pByFirstNameAndLastName = personService.getPersonByFirstNameAndLastName(firstName, lastName);
         return new ResponseEntity(pByFirstNameAndLastName, HttpStatus.OK);
 

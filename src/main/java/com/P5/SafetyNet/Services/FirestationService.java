@@ -1,6 +1,9 @@
 package com.P5.SafetyNet.Services;
 
-import com.P5.SafetyNet.Dtos.*;
+import com.P5.SafetyNet.Dtos.HouseHoldDTO;
+import com.P5.SafetyNet.Dtos.PersonByStationDTO;
+import com.P5.SafetyNet.Dtos.PersonByStationDTOList;
+import com.P5.SafetyNet.Dtos.PersonByStationDTOVar;
 import com.P5.SafetyNet.InterfaceRepository.FirestationRepository;
 import com.P5.SafetyNet.Models.Firestation;
 import com.P5.SafetyNet.Models.MedicalRecord;
@@ -20,7 +23,7 @@ public class FirestationService {
 
 
     @Autowired
-    public FirestationService( FirestationRepository firestationRepository){
+    public FirestationService(FirestationRepository firestationRepository) {
         this.firestationRepository = firestationRepository;
 
     }
@@ -54,58 +57,57 @@ public class FirestationService {
         }
     }
 
-    public List<Firestation> findByStation(Long station){
+    public List<Firestation> findByStation(Long station) {
         return firestationRepository.findByStation(station);
     }
 
-    public ResponseDTO returnListByFireStation(Long stationId) {
-        List<Firestation> firestationsInStation = findByStation(stationId);
-        List<Person> personsInStation= new LinkedList<>();
+    public PersonByStationDTOList returnPersonsByFireStation(Long station) {
+        List<Firestation> firestationsByStation = findByStation(station);
+        List<Person> personsInStation = new LinkedList<>();
 
-        for (Firestation firestation : firestationsInStation){
+        for (Firestation firestation : firestationsByStation) {
             Set<Person> personsInFirestation = firestation.getAssignedPersons();
 
             personsInStation.addAll(personsInFirestation);
         }
 
-        List<PersonByStationDTO> personListByStation = personsInStation.stream()
-                .map(person -> {
-                    return new PersonByStationDTO(person.getFirstName(),person.getLastName(),person.getAddress(), person.getPhone());
-                }).toList();
+        List<PersonByStationDTO> listOfPersonByStation = personsInStation.stream().map(person -> {
+            return new PersonByStationDTO(person.getFirstName(), person.getLastName(), person.getAddress(), person.getPhone());
+        }).toList();
 
         Long numberOfAdult = personsInStation.stream().filter(person -> person.getAge() > 18).count();
         Long numberOfChildren = personsInStation.stream().filter(person -> person.getAge() <= 18).count();
 
-        return new ResponseDTO(personListByStation, numberOfAdult, numberOfChildren);
+        return new PersonByStationDTOList(listOfPersonByStation, numberOfAdult, numberOfChildren);
 
 
     }
-    public HashMap<Long, List<HouseHoldDTO>>
-    getHouseHoldsByStation(List<Long> stations){
+
+    public HashMap<Long, List<HouseHoldDTO>> getHouseHoldsByStation(List<Long> stations) {
         HashMap<Long, List<HouseHoldDTO>> stationList = new HashMap<Long, List<HouseHoldDTO>>();
         List<PersonByStationDTOVar> personByStationDTOList;
 
-        for(Long station : stations) {
-            List<Firestation> firestationsfromStation = findByStation(station);
+        for (Long station : stations) {
+            List<Firestation> firestationsByStation = findByStation(station);
             List<HouseHoldDTO> houseHoldDTOList = new LinkedList<>();
 
-            for (Firestation firestation : firestationsfromStation) {
+            for (Firestation firestation : firestationsByStation) {
                 String address = firestation.getAddress();
                 Set<Person> getPersonsFromFirestations = firestation.getAssignedPersons();
 
-                 personByStationDTOList = getPersonsFromFirestations.stream().map((person) -> {
-                     MedicalRecord medicalRecord = person.getMedicalRecord();
-                     List<String> allergies = medicalRecord.getAllergies().isEmpty() ? new ArrayList<>() : medicalRecord.getAllergies();
-                     List<String> medications = medicalRecord.getMedications().isEmpty() ? new ArrayList<>() : medicalRecord.getMedications();
+                personByStationDTOList = getPersonsFromFirestations.stream().map((person) -> {
+                    MedicalRecord medicalRecord = person.getMedicalRecord();
+                    List<String> allergies = medicalRecord.getAllergies().isEmpty() ? new ArrayList<>() : medicalRecord.getAllergies();
+                    List<String> medications = medicalRecord.getMedications().isEmpty() ? new ArrayList<>() : medicalRecord.getMedications();
 
-                     return new PersonByStationDTOVar(person.getFirstName(), person.getLastName(), person.getPhone(), person.getAge(), allergies, medications);
-                 }).toList();
+                    return new PersonByStationDTOVar(person.getFirstName(), person.getLastName(), person.getPhone(), person.getAge(), allergies, medications);
+                }).toList();
 
 
                 houseHoldDTOList.add(new HouseHoldDTO(address, personByStationDTOList));
             }
 
-            stationList.put( station, houseHoldDTOList);
+            stationList.put(station, houseHoldDTOList);
 
         }
 

@@ -56,7 +56,6 @@ public class PersonService {
             personToUpdate.setZip(newPersonData.getZip());
             personToUpdate.setPhone(newPersonData.getPhone());
             personToUpdate.setEmail(newPersonData.getEmail());
-            personToUpdate.setAge(newPersonData.getAge());
             personToUpdate.setMedicalRecord(newPersonData.getMedicalRecord());
             return personRepository.save(personToUpdate);
         } else {

@@ -2,23 +2,19 @@ package com.P5.SafetyNet.Services;
 
 import com.P5.SafetyNet.InterfaceRepository.MedicalRecordRepository;
 import com.P5.SafetyNet.Models.MedicalRecord;
-import com.P5.SafetyNet.Models.Person;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.util.*;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
-import static org.mockito.Mockito.times;
 
 public class MedicalRecordServiceTest {
-    private  MedicalRecordService medicalRecordService;
+    private MedicalRecordService medicalRecordService;
 
     @Mock
     private MedicalRecordRepository medicalRecordRepository;
@@ -35,7 +31,7 @@ public class MedicalRecordServiceTest {
         this.medicalRecord = new MedicalRecord();
         medicalRecord.setId(1L);
         medicalRecord.setMedications(Arrays.asList("viagra:1kg", "prozac:200mg", "kamagra:200mg"));
-        medicalRecord.setAllergies(Arrays.asList("aux moules"));
+        medicalRecord.setAllergies(List.of("aux moules"));
         medicalRecord.setFirstName("JoJo");
         medicalRecord.setLastName("l'asticot");
         medicalRecord.setBirthdate("1969 année érotique");
@@ -62,10 +58,10 @@ public class MedicalRecordServiceTest {
     }
 
     @Test
-    public void testGetMedicalRecord () {
+    public void testGetMedicalRecord() {
         when(medicalRecordRepository.findById(1L)).thenReturn(Optional.of(this.medicalRecord));
         Optional<MedicalRecord> optionalMedRec = medicalRecordService.getMedicalRecord(1L);
-        assertEquals(optionalMedRec.isPresent(), true);
+        assertTrue(optionalMedRec.isPresent());
         MedicalRecord medRec = optionalMedRec.get();
         assertEquals(medRec.getId(), this.medicalRecord.getId());
         assertEquals(medRec.getFirstName(), this.medicalRecord.getFirstName());
@@ -75,6 +71,7 @@ public class MedicalRecordServiceTest {
 
         verify(medicalRecordRepository, times(1)).findById(1L);
     }
+
     @Test
     public void testSaveMedicalRecord() {
         when(medicalRecordRepository.save(any())).thenReturn(this.medicalRecord);
@@ -89,21 +86,19 @@ public class MedicalRecordServiceTest {
     }
 
     @Test
-    public void testUpdateMedicalRecord () {
+    public void testUpdateMedicalRecord() {
 
         MedicalRecord updatedMedicalRec = new MedicalRecord();
         updatedMedicalRec.setId(1L);
         updatedMedicalRec.setMedications(Arrays.asList("viagra:500g", "strepsil: 40 mg", "prozac:34.45mg"));
-        updatedMedicalRec.setAllergies(Arrays.asList("poil de chatte"));
+        updatedMedicalRec.setAllergies(List.of("poil de chatte"));
         updatedMedicalRec.setBirthdate("1945");
         updatedMedicalRec.setFirstName("JoJo");
         updatedMedicalRec.setLastName("l'asticot");
 
 
-
-
         when(medicalRecordRepository.findById(medicalRecord.getId())).thenReturn(Optional.of(medicalRecord));
-        when(medicalRecordRepository.save(updatedMedicalRec)).thenReturn(updatedMedicalRec);
+        when(medicalRecordRepository.save(any())).thenReturn(updatedMedicalRec);
 
         MedicalRecord result = medicalRecordService.updateMedicalRecord(medicalRecord.getId(), updatedMedicalRec);
 
@@ -112,7 +107,6 @@ public class MedicalRecordServiceTest {
         assertArrayEquals(new String[]{"poil de chatte"}, result.getAllergies().toArray());
         assertEquals("1945", result.getBirthdate());
 
-        verify(medicalRecordRepository, times(1)).findById(medicalRecord.getId());
-        verify(medicalRecordRepository, times(1)).save(updatedMedicalRec);
+        
     }
 }

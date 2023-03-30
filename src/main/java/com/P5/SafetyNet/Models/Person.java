@@ -1,9 +1,10 @@
 package com.P5.SafetyNet.Models;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.*;
-
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -42,8 +43,6 @@ public class Person {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "age")
-    private int age;
 
     /*utiliser les annotations JPA pour établir une relation One-to-One entre les entités Person et MedicalRecord :
     @JoinColumn spécifie le nom de la colonne de la table Person -->foreign key pour référencer
@@ -58,6 +57,7 @@ public class Person {
     @JoinTable(name = "firestations_persons", joinColumns = @JoinColumn(name = "person_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "firestation_id", referencedColumnName = "id"))
     private Set<Firestation> fireStations = new HashSet<Firestation>();
 
+    @JsonIgnore
     public int getAge() {
         String birthdateStr = medicalRecord.getBirthdate();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
@@ -78,9 +78,6 @@ public class Person {
         fireStations.add(firestation);
     }
 
-    public void setAge(int age) {
-        this.age = getAge();
-    }
 
 }
 

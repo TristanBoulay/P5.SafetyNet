@@ -7,7 +7,7 @@ import java.util.List;
 
 @Data
 @AllArgsConstructor
-public class ResponseDTO {
+public class PersonByStationDTOList {
     List<PersonByStationDTO> persons;
     Long numberOfAdult;
     Long numberOfChildren;
