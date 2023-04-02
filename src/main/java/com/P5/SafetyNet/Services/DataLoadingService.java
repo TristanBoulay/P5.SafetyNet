@@ -21,14 +21,15 @@ import java.util.List;
 @Service
 public class DataLoadingService {
     @Autowired
-    private PersonRepository personRepository;
+    private final PersonRepository personRepository;
+    @Autowired
+    private final MedicalRecordRepository medicalRecordRepository;
 
     @Autowired
-    private MedicalRecordRepository medicalRecordRepository;
+    private final FirestationRepository firestationRepository;
 
-    @Autowired
-    private FirestationRepository firestationRepository;
-    @Value("${data.json.path}")
+
+    @Value("/Users/tristanboulay/eclipse-workspace/SafetyNet/src/main/resources/data.json")
     String dataJsonPath;
 
     @PostConstruct
