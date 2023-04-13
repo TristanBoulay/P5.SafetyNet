@@ -1,0 +1,357 @@
+2023-04-13 12:08:40,475 INFO [main] c.P.S.C.PersonControllerControllerTest [StartupInfoLogger.java:51] Starting PersonControllerControllerTest using Java 19.0.1 with PID 57224 (started by tristanboulay in /Users/tristanboulay/eclipse-workspace/SafetyNet)
+2023-04-13 12:08:40,477 INFO [main] c.P.S.C.PersonControllerControllerTest [SpringApplication.java:630] No active profile set, falling back to 1 default profile: "default"
+2023-04-13 12:08:41,189 INFO [main] o.s.b.t.m.w.SpringBootMockServletContext [MockServletContext.java:435] Initializing Spring TestDispatcherServlet ''
+2023-04-13 12:08:41,189 INFO [main] o.s.t.w.s.TestDispatcherServlet [FrameworkServlet.java:532] Initializing Servlet ''
+2023-04-13 12:08:41,191 INFO [main] o.s.t.w.s.TestDispatcherServlet [FrameworkServlet.java:554] Completed initialization in 0 ms
+2023-04-13 12:08:41,219 INFO [main] c.P.S.C.PersonControllerControllerTest [StartupInfoLogger.java:57] Started PersonControllerControllerTest in 0.832 seconds (process running for 1.367)
+2023-04-13 12:08:41,277 INFO [main] c.P.S.C.PersonController [PersonController.java:29] GET request received for all persons
+2023-04-13 12:08:41,355 INFO [main] c.P.S.C.PersonController [PersonController.java:52] PUT request received to update person with id: 1
+2023-04-13 12:08:41,390 INFO [main] c.P.S.C.PersonController [PersonController.java:70] DELETE request received for person with id: 1
+2023-04-13 12:08:41,396 INFO [main] c.P.S.C.PersonController [PersonController.java:41] POST request received to create person: Jean Paul
+2023-04-13 12:08:41,404 INFO [main] c.P.S.C.PersonController [PersonController.java:35] GET request received for person with id: 1
+2023-04-13 12:08:41,427 INFO [main] c.P.S.C.FirestationControllerControllerTest [StartupInfoLogger.java:51] Starting FirestationControllerControllerTest using Java 19.0.1 with PID 57224 (started by tristanboulay in /Users/tristanboulay/eclipse-workspace/SafetyNet)
+2023-04-13 12:08:41,428 INFO [main] c.P.S.C.FirestationControllerControllerTest [SpringApplication.java:630] No active profile set, falling back to 1 default profile: "default"
+2023-04-13 12:08:41,505 INFO [main] o.s.b.t.m.w.SpringBootMockServletContext [MockServletContext.java:435] Initializing Spring TestDispatcherServlet ''
+2023-04-13 12:08:41,505 INFO [main] o.s.t.w.s.TestDispatcherServlet [FrameworkServlet.java:532] Initializing Servlet ''
+2023-04-13 12:08:41,505 INFO [main] o.s.t.w.s.TestDispatcherServlet [FrameworkServlet.java:554] Completed initialization in 0 ms
+2023-04-13 12:08:41,509 INFO [main] c.P.S.C.FirestationControllerControllerTest [StartupInfoLogger.java:57] Started FirestationControllerControllerTest in 0.096 seconds (process running for 1.657)
+2023-04-13 12:08:41,516 INFO [main] c.P.S.C.FirestationController [FirestationController.java:41] DELETE request received for firestation with ID: 1
+2023-04-13 12:08:41,520 INFO [main] c.P.S.C.FirestationController [FirestationController.java:29] GET request received for firestation with ID: 1
+2023-04-13 12:08:41,527 INFO [main] c.P.S.C.FirestationController [FirestationController.java:35] GET request received for all firestations
+2023-04-13 12:08:41,538 INFO [main] c.P.S.C.FirestationController [FirestationController.java:56] PUT request received to update firestation with ID: 1
+2023-04-13 12:08:41,544 INFO [main] c.P.S.C.FirestationController [FirestationController.java:47] POST request received to save firestation: com.P5.SafetyNet.Models.Firestation@4522d793
+2023-04-13 12:08:41,548 INFO [main] o.s.t.c.s.AnnotationConfigContextLoaderUtils [AnnotationConfigContextLoaderUtils.java:83] Could not detect default configuration classes for test class [com.P5.SafetyNet.SafetyNetApplicationTest]: SafetyNetApplicationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-04-13 12:08:41,558 INFO [main] o.s.b.t.c.SpringBootTestContextBootstrapper [SpringBootTestContextBootstrapper.java:247] Found @SpringBootConfiguration com.P5.SafetyNet.SafetyNetApplication for test class com.P5.SafetyNet.SafetyNetApplicationTest
+2023-04-13 12:08:41,570 INFO [main] c.P.S.SafetyNetApplicationTest [StartupInfoLogger.java:51] Starting SafetyNetApplicationTest using Java 19.0.1 with PID 57224 (started by tristanboulay in /Users/tristanboulay/eclipse-workspace/SafetyNet)
+2023-04-13 12:08:41,570 INFO [main] c.P.S.SafetyNetApplicationTest [SpringApplication.java:630] No active profile set, falling back to 1 default profile: "default"
+2023-04-13 12:08:41,716 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:138] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-13 12:08:41,748 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:208] Finished Spring Data repository scanning in 28 ms. Found 3 JPA repository interfaces.
+2023-04-13 12:08:41,896 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2023-04-13 12:08:41,984 INFO [main] c.z.h.p.HikariPool [HikariPool.java:565] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:79fe3554-d654-45d5-8e28-2f3453a794a8 user=SA
+2023-04-13 12:08:41,985 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2023-04-13 12:08:42,013 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-13 12:08:42,032 INFO [main] o.h.Version [Version.java:44] HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-04-13 12:08:42,050 WARN [main] o.h.o.deprecation [MetadataBuilderImpl.java:626] HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-04-13 12:08:42,104 INFO [main] SQL dialect [DialectFactoryImpl.java:66] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-13 12:08:42,393 INFO [main] o.h.e.t.j.p.i.JtaPlatformInitiator [JtaPlatformInitiator.java:51] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-13 12:08:42,396 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-13 12:08:42,870 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [JpaBaseConfiguration.java:227] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-13 12:08:42,950 INFO [main] c.P.S.SafetyNetApplicationTest [StartupInfoLogger.java:57] Started SafetyNetApplicationTest in 1.389 seconds (process running for 3.097)
+2023-04-13 12:08:43,101 INFO [main] c.P.S.C.MedicalRecordControllerTest [StartupInfoLogger.java:51] Starting MedicalRecordControllerTest using Java 19.0.1 with PID 57224 (started by tristanboulay in /Users/tristanboulay/eclipse-workspace/SafetyNet)
+2023-04-13 12:08:43,101 INFO [main] c.P.S.C.MedicalRecordControllerTest [SpringApplication.java:630] No active profile set, falling back to 1 default profile: "default"
+2023-04-13 12:08:43,143 INFO [main] o.s.b.t.m.w.SpringBootMockServletContext [MockServletContext.java:435] Initializing Spring TestDispatcherServlet ''
+2023-04-13 12:08:43,144 INFO [main] o.s.t.w.s.TestDispatcherServlet [FrameworkServlet.java:532] Initializing Servlet ''
+2023-04-13 12:08:43,144 INFO [main] o.s.t.w.s.TestDispatcherServlet [FrameworkServlet.java:554] Completed initialization in 0 ms
+2023-04-13 12:08:43,146 INFO [main] c.P.S.C.MedicalRecordControllerTest [StartupInfoLogger.java:57] Started MedicalRecordControllerTest in 0.052 seconds (process running for 3.294)
+2023-04-13 12:08:43,150 INFO [main] c.P.S.C.MedicalRecordController [MedicalRecordController.java:29] GET request received for all medical records
+2023-04-13 12:08:43,155 INFO [main] c.P.S.C.MedicalRecordController [MedicalRecordController.java:23] GET request received for medical record with id 1
+2023-04-13 12:08:43,164 INFO [main] c.P.S.C.MedicalRecordController [MedicalRecordController.java:50] PUT request received to update medical record with id 1
+2023-04-13 12:08:43,169 INFO [main] c.P.S.C.MedicalRecordController [MedicalRecordController.java:41] POST request received to save medical record for person with id null
+2023-04-13 12:08:43,173 INFO [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:650] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-13 12:08:43,173 INFO [SpringApplicationShutdownHook] o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl [SchemaDropperImpl.java:585] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-04-13 12:08:43,176 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2023-04-13 12:08:43,177 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2023-04-13 12:08:59,532 INFO [main] c.P.S.SafetyNetApplication [StartupInfoLogger.java:51] Starting SafetyNetApplication using Java 19.0.1 with PID 57242 (/Users/tristanboulay/eclipse-workspace/SafetyNet/target/classes started by tristanboulay in /Users/tristanboulay/eclipse-workspace/SafetyNet)
+2023-04-13 12:08:59,534 INFO [main] c.P.S.SafetyNetApplication [SpringApplication.java:630] No active profile set, falling back to 1 default profile: "default"
+2023-04-13 12:08:59,831 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:138] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-13 12:08:59,864 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:208] Finished Spring Data repository scanning in 29 ms. Found 3 JPA repository interfaces.
+2023-04-13 12:09:00,102 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2023-04-13 12:09:00,106 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-13 12:09:00,106 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2023-04-13 12:09:00,106 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-04-13 12:09:00,154 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2023-04-13 12:09:00,155 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:291] Root WebApplicationContext: initialization completed in 600 ms
+2023-04-13 12:09:00,213 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2023-04-13 12:09:00,302 INFO [main] c.z.h.p.HikariPool [HikariPool.java:565] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:d7123524-7bb3-4955-abae-36a5ba79d9e9 user=SA
+2023-04-13 12:09:00,303 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2023-04-13 12:09:00,325 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-13 12:09:00,347 INFO [main] o.h.Version [Version.java:44] HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-04-13 12:09:00,409 WARN [main] o.h.o.deprecation [MetadataBuilderImpl.java:626] HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-04-13 12:09:00,467 INFO [main] SQL dialect [DialectFactoryImpl.java:66] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-13 12:09:00,821 INFO [main] o.h.e.t.j.p.i.JtaPlatformInitiator [JtaPlatformInitiator.java:51] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-13 12:09:00,824 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-13 12:09:01,294 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [JpaBaseConfiguration.java:227] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-13 12:09:01,413 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2023-04-13 12:09:01,425 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-13 12:09:01,430 INFO [main] c.P.S.SafetyNetApplication [StartupInfoLogger.java:57] Started SafetyNetApplication in 2.049 seconds (process running for 2.318)
+2023-04-13 12:10:55,048 INFO [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:650] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-13 12:10:55,049 INFO [SpringApplicationShutdownHook] o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl [SchemaDropperImpl.java:585] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-04-13 12:10:55,051 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2023-04-13 12:10:55,052 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2023-04-13 12:10:59,214 INFO [main] c.P.S.SafetyNetApplication [StartupInfoLogger.java:51] Starting SafetyNetApplication using Java 19.0.1 with PID 57278 (/Users/tristanboulay/eclipse-workspace/SafetyNet/target/classes started by tristanboulay in /Users/tristanboulay/eclipse-workspace/SafetyNet)
+2023-04-13 12:10:59,217 INFO [main] c.P.S.SafetyNetApplication [SpringApplication.java:630] No active profile set, falling back to 1 default profile: "default"
+2023-04-13 12:10:59,504 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:138] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-13 12:10:59,539 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:208] Finished Spring Data repository scanning in 30 ms. Found 3 JPA repository interfaces.
+2023-04-13 12:10:59,804 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2023-04-13 12:10:59,810 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-13 12:10:59,810 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2023-04-13 12:10:59,810 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-04-13 12:10:59,862 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2023-04-13 12:10:59,863 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:291] Root WebApplicationContext: initialization completed in 625 ms
+2023-04-13 12:10:59,926 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2023-04-13 12:11:00,018 INFO [main] c.z.h.p.HikariPool [HikariPool.java:565] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:1ba3afbe-a0af-49fc-b839-a06966c76612 user=SA
+2023-04-13 12:11:00,018 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2023-04-13 12:11:00,041 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-13 12:11:00,063 INFO [main] o.h.Version [Version.java:44] HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-04-13 12:11:00,128 WARN [main] o.h.o.deprecation [MetadataBuilderImpl.java:626] HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-04-13 12:11:00,189 INFO [main] SQL dialect [DialectFactoryImpl.java:66] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-13 12:11:00,546 INFO [main] o.h.e.t.j.p.i.JtaPlatformInitiator [JtaPlatformInitiator.java:51] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-13 12:11:00,550 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-13 12:11:01,032 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [JpaBaseConfiguration.java:227] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-13 12:11:01,162 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2023-04-13 12:11:01,176 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-13 12:11:01,180 INFO [main] c.P.S.SafetyNetApplication [StartupInfoLogger.java:57] Started SafetyNetApplication in 2.117 seconds (process running for 2.384)
+2023-04-13 12:11:11,885 INFO [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:650] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-13 12:11:11,886 INFO [SpringApplicationShutdownHook] o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl [SchemaDropperImpl.java:585] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-04-13 12:11:11,888 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2023-04-13 12:11:11,889 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2023-04-13 12:11:19,564 INFO [main] c.P.S.SafetyNetApplication [StartupInfoLogger.java:51] Starting SafetyNetApplication using Java 19.0.1 with PID 57284 (/Users/tristanboulay/eclipse-workspace/SafetyNet/target/classes started by tristanboulay in /Users/tristanboulay/eclipse-workspace/SafetyNet)
+2023-04-13 12:11:19,567 INFO [main] c.P.S.SafetyNetApplication [SpringApplication.java:630] No active profile set, falling back to 1 default profile: "default"
+2023-04-13 12:11:19,864 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:138] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-13 12:11:19,902 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:208] Finished Spring Data repository scanning in 32 ms. Found 3 JPA repository interfaces.
+2023-04-13 12:11:20,154 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2023-04-13 12:11:20,160 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-13 12:11:20,160 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2023-04-13 12:11:20,161 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-04-13 12:11:20,211 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2023-04-13 12:11:20,212 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:291] Root WebApplicationContext: initialization completed in 624 ms
+2023-04-13 12:11:20,282 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2023-04-13 12:11:20,378 INFO [main] c.z.h.p.HikariPool [HikariPool.java:565] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:317b33ec-21b3-49fe-b154-05b867042501 user=SA
+2023-04-13 12:11:20,379 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2023-04-13 12:11:20,404 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-13 12:11:20,427 INFO [main] o.h.Version [Version.java:44] HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-04-13 12:11:20,496 WARN [main] o.h.o.deprecation [MetadataBuilderImpl.java:626] HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-04-13 12:11:20,558 INFO [main] SQL dialect [DialectFactoryImpl.java:66] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-13 12:11:20,917 INFO [main] o.h.e.t.j.p.i.JtaPlatformInitiator [JtaPlatformInitiator.java:51] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-13 12:11:20,920 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-13 12:11:21,399 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [JpaBaseConfiguration.java:227] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-13 12:11:21,521 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2023-04-13 12:11:21,535 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-13 12:11:21,539 INFO [main] c.P.S.SafetyNetApplication [StartupInfoLogger.java:57] Started SafetyNetApplication in 2.124 seconds (process running for 2.394)
+2023-04-13 12:11:25,424 INFO [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:650] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-13 12:11:25,425 INFO [SpringApplicationShutdownHook] o.h.t.s.i.SchemaDropperImpl$DelayedDropActionImpl [SchemaDropperImpl.java:585] HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-04-13 12:11:25,427 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:350] HikariPool-1 - Shutdown initiated...
+2023-04-13 12:11:25,428 INFO [SpringApplicationShutdownHook] c.z.h.HikariDataSource [HikariDataSource.java:352] HikariPool-1 - Shutdown completed.
+2023-04-13 12:11:37,781 INFO [main] c.P.S.SafetyNetApplication [StartupInfoLogger.java:51] Starting SafetyNetApplication using Java 19.0.1 with PID 57291 (/Users/tristanboulay/eclipse-workspace/SafetyNet/target/classes started by tristanboulay in /Users/tristanboulay/eclipse-workspace/SafetyNet)
+2023-04-13 12:11:37,783 INFO [main] c.P.S.SafetyNetApplication [SpringApplication.java:630] No active profile set, falling back to 1 default profile: "default"
+2023-04-13 12:11:38,058 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:138] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-13 12:11:38,085 INFO [main] o.s.d.r.c.RepositoryConfigurationDelegate [RepositoryConfigurationDelegate.java:208] Finished Spring Data repository scanning in 23 ms. Found 3 JPA repository interfaces.
+2023-04-13 12:11:38,330 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:108] Tomcat initialized with port(s): 8080 (http)
+2023-04-13 12:11:38,335 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-13 12:11:38,335 INFO [main] o.a.c.c.StandardService [DirectJDKLog.java:173] Starting service [Tomcat]
+2023-04-13 12:11:38,336 INFO [main] o.a.c.c.StandardEngine [DirectJDKLog.java:173] Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-04-13 12:11:38,381 INFO [main] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring embedded WebApplicationContext
+2023-04-13 12:11:38,382 INFO [main] o.s.b.w.s.c.ServletWebServerApplicationContext [ServletWebServerApplicationContext.java:291] Root WebApplicationContext: initialization completed in 574 ms
+2023-04-13 12:11:38,435 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:110] HikariPool-1 - Starting...
+2023-04-13 12:11:38,519 INFO [main] c.z.h.p.HikariPool [HikariPool.java:565] HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:8ae0899e-e108-4460-acf4-6f4ded06fa5f user=SA
+2023-04-13 12:11:38,523 INFO [main] c.z.h.HikariDataSource [HikariDataSource.java:123] HikariPool-1 - Start completed.
+2023-04-13 12:11:38,544 INFO [main] o.h.j.i.u.LogHelper [LogHelper.java:31] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-13 12:11:38,563 INFO [main] o.h.Version [Version.java:44] HHH000412: Hibernate ORM core version 6.1.6.Final
+2023-04-13 12:11:38,624 WARN [main] o.h.o.deprecation [MetadataBuilderImpl.java:626] HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2023-04-13 12:11:38,675 INFO [main] SQL dialect [DialectFactoryImpl.java:66] HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-04-13 12:11:39,041 INFO [main] o.h.e.t.j.p.i.JtaPlatformInitiator [JtaPlatformInitiator.java:51] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-13 12:11:39,045 INFO [main] o.s.o.j.LocalContainerEntityManagerFactoryBean [AbstractEntityManagerFactoryBean.java:437] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-13 12:11:39,546 WARN [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [JpaBaseConfiguration.java:227] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-04-13 12:11:39,675 INFO [main] o.a.c.h.Http11NioProtocol [DirectJDKLog.java:173] Starting ProtocolHandler ["http-nio-8080"]
+2023-04-13 12:11:39,684 INFO [main] o.s.b.w.e.t.TomcatWebServer [TomcatWebServer.java:220] Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-13 12:11:39,689 INFO [main] c.P.S.SafetyNetApplication [StartupInfoLogger.java:57] Started SafetyNetApplication in 2.051 seconds (process running for 2.27)
+2023-04-13 12:12:01,709 INFO [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/] [DirectJDKLog.java:173] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-13 12:12:01,709 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:532] Initializing Servlet 'dispatcherServlet'
+2023-04-13 12:12:01,710 INFO [http-nio-8080-exec-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:554] Completed initialization in 1 ms
+2023-04-13 12:12:01,731 INFO [http-nio-8080-exec-1] c.P.S.C.PersonController [PersonController.java:35] GET request received for person with id: 1
+2023-04-13 12:18:33,474 INFO [http-nio-8080-exec-4] c.P.S.C.PersonController [PersonController.java:29] GET request received for all persons
+2023-04-13 12:18:37,508 INFO [http-nio-8080-exec-5] c.P.S.C.FirestationController [FirestationController.java:35] GET request received for all firestations
+2023-04-13 12:19:46,521 INFO [http-nio-8080-exec-9] c.P.S.C.FirestationController [FirestationController.java:29] GET request received for firestation with ID: 1
+2023-04-13 12:25:42,910 INFO [http-nio-8080-exec-3] c.P.S.C.FirestationController [FirestationController.java:47] POST request received to save firestation: com.P5.SafetyNet.Models.Firestation@60a20345
+2023-04-13 12:26:14,317 WARN [http-nio-8080-exec-4] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:207] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+2023-04-13 12:27:02,659 WARN [http-nio-8080-exec-5] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:207] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+2023-04-13 12:27:29,478 INFO [http-nio-8080-exec-6] c.P.S.C.FirestationController [FirestationController.java:29] GET request received for firestation with ID: 14
+2023-04-13 12:29:33,887 INFO [http-nio-8080-exec-8] c.P.S.C.FirestationController [FirestationController.java:56] PUT request received to update firestation with ID: 14
+2023-04-13 12:30:57,355 INFO [http-nio-8080-exec-1] c.P.S.C.FirestationController [FirestationController.java:56] PUT request received to update firestation with ID: 14
+2023-04-13 12:32:03,740 INFO [http-nio-8080-exec-4] c.P.S.C.FirestationController [FirestationController.java:65] GET request received for persons by station with stationNumber: 1
+2023-04-13 12:32:39,636 INFO [http-nio-8080-exec-5] c.P.S.C.FirestationController [FirestationController.java:73] GET request received for households by stations: [1]
+2023-04-13 12:32:39,656 INFO [http-nio-8080-exec-5] c.P.S.C.FirestationController [FirestationController.java:80] Found households for stations: [1]
+2023-04-13 12:33:56,932 INFO [http-nio-8080-exec-8] c.P.S.C.FirestationController [FirestationController.java:41] DELETE request received for firestation with ID: 14
+2023-04-13 12:35:11,240 INFO [http-nio-8080-exec-2] c.P.S.C.PersonController [PersonController.java:41] POST request received to create person: null null
+2023-04-13 12:36:05,518 INFO [http-nio-8080-exec-3] c.P.S.C.PersonController [PersonController.java:52] PUT request received to update person with id: 24
+2023-04-13 12:36:05,523 ERROR [http-nio-8080-exec-3] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java:175] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because the return value of "com.P5.SafetyNet.Models.Person.getFirstName()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because the return value of "com.P5.SafetyNet.Models.Person.getFirstName()" is null
+	at com.P5.SafetyNet.Services.PersonService.updatePerson(PersonService.java:50)
+	at com.P5.SafetyNet.Controllers.PersonController.updatePerson(PersonController.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1080)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1010)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:924)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:734)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:884)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-04-13 12:36:48,758 INFO [http-nio-8080-exec-5] c.P.S.C.PersonController [PersonController.java:35] GET request received for person with id: 24
+2023-04-13 12:37:02,093 INFO [http-nio-8080-exec-6] c.P.S.C.PersonController [PersonController.java:52] PUT request received to update person with id: 24
+2023-04-13 12:37:02,100 ERROR [http-nio-8080-exec-6] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java:175] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because the return value of "com.P5.SafetyNet.Models.Person.getFirstName()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because the return value of "com.P5.SafetyNet.Models.Person.getFirstName()" is null
+	at com.P5.SafetyNet.Services.PersonService.updatePerson(PersonService.java:50)
+	at com.P5.SafetyNet.Controllers.PersonController.updatePerson(PersonController.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1080)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1010)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:924)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:734)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:884)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-04-13 12:39:38,662 INFO [http-nio-8080-exec-9] c.P.S.C.PersonController [PersonController.java:35] GET request received for person with id: 24
+2023-04-13 12:40:32,664 INFO [http-nio-8080-exec-8] c.P.S.C.PersonController [PersonController.java:52] PUT request received to update person with id: 24
+2023-04-13 12:40:32,668 ERROR [http-nio-8080-exec-8] o.a.c.c.C.[.[.[.[dispatcherServlet] [DirectJDKLog.java:175] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because the return value of "com.P5.SafetyNet.Models.Person.getFirstName()" is null] with root cause
+java.lang.NullPointerException: Cannot invoke "String.equals(Object)" because the return value of "com.P5.SafetyNet.Models.Person.getFirstName()" is null
+	at com.P5.SafetyNet.Services.PersonService.updatePerson(PersonService.java:50)
+	at com.P5.SafetyNet.Controllers.PersonController.updatePerson(PersonController.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1080)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1010)
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:924)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:734)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:884)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-04-13 12:41:36,033 INFO [http-nio-8080-exec-10] c.P.S.C.PersonController [PersonController.java:70] DELETE request received for person with id: 24
+2023-04-13 12:42:36,841 WARN [http-nio-8080-exec-4] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:207] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+2023-04-13 12:42:46,899 INFO [http-nio-8080-exec-5] c.P.S.C.PersonController [PersonController.java:41] POST request received to create person: toto bongo
+2023-04-13 12:43:22,763 INFO [http-nio-8080-exec-6] c.P.S.C.PersonController [PersonController.java:52] PUT request received to update person with id: 25
+2023-04-13 12:43:55,450 INFO [http-nio-8080-exec-7] c.P.S.C.PersonController [PersonController.java:70] DELETE request received for person with id: 25
+2023-04-13 12:44:46,929 INFO [http-nio-8080-exec-9] c.P.S.C.PersonController [PersonController.java:77] GET request received for child alert with address: 1509 Culver St
+2023-04-13 12:46:32,312 INFO [http-nio-8080-exec-2] c.P.S.C.PersonController [PersonController.java:88] GET request received for community email with city: Culver
+2023-04-13 12:46:54,693 INFO [http-nio-8080-exec-3] c.P.S.C.PersonController [PersonController.java:96] GET request received for persons by address: 1509 Culver St
+2023-04-13 12:47:29,087 INFO [http-nio-8080-exec-4] c.P.S.C.PersonController [PersonController.java:105] Received request to retrieve phone numbers for fire station: com.P5.SafetyNet.Models.Firestation@3c9c0e85
+2023-04-13 12:47:29,093 INFO [http-nio-8080-exec-4] c.P.S.C.PersonController [PersonController.java:107] Returning list of phone numbers for fire station: com.P5.SafetyNet.Models.Firestation@3c9c0e85
+2023-04-13 12:47:40,871 INFO [http-nio-8080-exec-6] c.P.S.C.PersonController [PersonController.java:113] Received request to retrieve person information for first name: Sophia and last name: Zemicks
+2023-04-13 12:47:40,878 INFO [http-nio-8080-exec-6] c.P.S.C.PersonController [PersonController.java:115] Returning person information for first name: Sophia and last name: Zemicks
+2023-04-13 12:49:07,722 INFO [http-nio-8080-exec-8] c.P.S.C.MedicalRecordController [MedicalRecordController.java:29] GET request received for all medical records
+2023-04-13 12:49:13,692 INFO [http-nio-8080-exec-10] c.P.S.C.MedicalRecordController [MedicalRecordController.java:23] GET request received for medical record with id 4
+2023-04-13 12:53:58,259 WARN [http-nio-8080-exec-4] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:207] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+2023-04-13 12:55:17,365 INFO [http-nio-8080-exec-6] c.P.S.C.MedicalRecordController [MedicalRecordController.java:41] POST request received to save medical record for person with id null
+2023-04-13 12:56:06,668 WARN [http-nio-8080-exec-7] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:207] Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'DELETE' is not supported]
+2023-04-13 12:57:32,241 WARN [http-nio-8080-exec-10] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:207] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `com.P5.SafetyNet.Models.Person` (although at least one Creator exists): no int/Int-argument constructor/factory method to deserialize from Number value (1)]
+2023-04-13 12:57:45,068 WARN [http-nio-8080-exec-2] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:207] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot deserialize value of type `com.P5.SafetyNet.Models.Person` from Array value (token `JsonToken.START_ARRAY`)]
+2023-04-13 12:58:25,117 INFO [http-nio-8080-exec-4] c.P.S.C.MedicalRecordController [MedicalRecordController.java:29] GET request received for all medical records
+2023-04-13 12:59:02,415 WARN [http-nio-8080-exec-5] o.s.w.s.m.s.DefaultHandlerExceptionResolver [AbstractHandlerExceptionResolver.java:207] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('1' (code 49)): was expecting double-quote to start field name]

@@ -6,6 +6,7 @@ import com.P5.SafetyNet.Dtos.PersonByStationDTO;
 import com.P5.SafetyNet.Dtos.PersonByStationDTOList;
 import com.P5.SafetyNet.Models.Firestation;
 import com.P5.SafetyNet.Services.FirestationService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -17,30 +18,33 @@ import java.util.HashMap;
 import java.util.List;
 
 @RestController
+@Slf4j
 public class FirestationController {
 
     @Autowired
     private FirestationService firestationService;
 
     @GetMapping("/firestations/{id}")
-    public com.P5.SafetyNet.Models.Firestation getFirestation(@PathVariable Long id) {
+    public Firestation getFirestation(@PathVariable Long id) {
+        log.info("GET request received for firestation with ID: {}", id);
         return firestationService.getFirestation(id).orElse(null);
     }
 
-
     @GetMapping("/firestations")
-    public Iterable<com.P5.SafetyNet.Models.Firestation> getFirestations() {
+    public Iterable<Firestation> getFirestations() {
+        log.info("GET request received for all firestations");
         return firestationService.getFirestations();
     }
 
-
     @DeleteMapping("/firestations/{id}")
     public void deleteFirestation(@PathVariable Long id) {
+        log.info("DELETE request received for firestation with ID: {}", id);
         firestationService.deleteFirestation(id);
     }
 
     @PostMapping(value = "/firestations", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Firestation> saveFirestation(@RequestBody com.P5.SafetyNet.Models.Firestation firestation) {
+    public ResponseEntity<Firestation> saveFirestation(@RequestBody Firestation firestation) {
+        log.info("POST request received to save firestation: {}", firestation);
         Firestation savedFirestation = firestationService.saveFirestation(firestation);
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -49,6 +53,7 @@ public class FirestationController {
 
     @PutMapping("/firestations/{id}")
     public ResponseEntity<Firestation> updatePerson(@PathVariable Long id, @RequestBody Firestation firestation) {
+        log.info("PUT request received to update firestation with ID: {}", id);
         Firestation updatedFirestation = firestationService.updateFirestation(id, firestation);
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -57,6 +62,7 @@ public class FirestationController {
 
     @GetMapping("/firestation")
     public ResponseEntity<List<PersonByStationDTO>> getPersonsByStation(@RequestParam("stationNumber") Long stationNumber) {
+        log.info("GET request received for persons by station with stationNumber: {}", stationNumber);
         PersonByStationDTOList personByStation = firestationService.returnPersonsByFireStation(stationNumber);
 
         return new ResponseEntity(personByStation, HttpStatus.OK);
@@ -64,23 +70,25 @@ public class FirestationController {
 
     @GetMapping("/flood/stations")
     public ResponseEntity<HashMap<Long, List<HouseHoldDTO>>> getHouseHoldsByStation(@RequestParam("stations") List<Long> stations) {
-        System.out.println(stations);
+        log.info("GET request received for households by stations: {}", stations);
         try {
             HashMap<Long, List<HouseHoldDTO>> houseHoldDTOList = firestationService.getHouseHoldsByStation(stations);
             if (houseHoldDTOList.isEmpty()) {
-                System.out.println("etape1");
+                log.error("No households found for stations: {}", stations);
                 return ResponseEntity.noContent().build();
             } else {
-                System.out.println("etape2");
+                log.info("Found households for stations: {}", stations);
                 return ResponseEntity.ok(houseHoldDTOList);
             }
         } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println(e);
+            log.error("An error occurred while getting households for stations: {}", stations, e);
             return null;
         }
-
     }
-//va retourner un DTO avec comme parametres un string et une liste de Person
-
 }
+
+
+
+
+
+
